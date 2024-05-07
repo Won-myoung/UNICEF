@@ -1,0 +1,118 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+.uniBotton {
+  margin: 0;
+  padding: 0;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+/* start */
+body {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.header a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.removeMenu a {
+  margin-right: 30px;
+}
+
+.header a:hover {
+  color: #1cabe2;
+}
+.uniBotton {
+  margin-right: 100px;
+}
+.header > a:last-child {
+  margin-left: auto;
+  background-color: rgb(255, 220, 14);
+  width: 182px;
+  height: 75px;
+  text-align: center;
+  line-height: 70px;
+}
+
+.doingMenuSpread,
+.giveMenuSpread,
+.introduceMenuSpread {
+  display: flex;
+  gap: 50px;
+  padding: 20px 20px;
+  border-top: 1px solid gray;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 121px;
+  display: none;
+  z-index: 999;
+}
+.doingMenuButton:hover + .doingMenuSpread,
+.giveMenuButton:hover + .giveMenuSpread,
+.introduceMenuButton:hover + .introduceMenuSpread {
+  display: flex;
+}
+
+.doingMenuSpread ul,
+.giveMenuSpread ul,
+.introduceMenuSpread ul {
+  font-weight: 600;
+  margin: 20px 0;
+}
+.doingMenuSpread > ul,
+.giveMenuSpread > ul,
+.introduceMenuSpread > ul {
+  margin: 0;
+}
+.doingMenuSpread li,
+.giveMenuSpread li,
+.introduceMenuSpread li {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.doingMenuSpread > ul > li:first-child,
+.giveMenuSpread > ul > li:first-child,
+.introduceMenuSpread > ul > li:first-child {
+  margin-top: 20px;
+  /* border: 1px solid red; */
+}
+
+@media (max-width: 900px) {
+  .removeMenu {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .uniBotton img {
+    width: 140px;
+  }
+  .removeMenu {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .uniBotton img {
+    width: 113px;
+  }
+}
