@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./Header";
-import Home from "./doing";
+import Doing from "./Doing";
 import Info from "./pages/Info";
 import State from "./pages/State";
 import Footer from "./Footer";
@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Doing />} />
           <Route path="/info" element={<Info />} />
           <Route path="/state" element={<State />} />
         </Routes>

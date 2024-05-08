@@ -8,7 +8,6 @@
   padding: 0;
 }
 
-.home {
-  background-color: #007aff;
-  height: 200px;
+Header {
+  border: 2px solid red;
 }

@@ -12,6 +12,8 @@ ul {
 }
 .footer > div {
   position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 .footerIcon {
   position: absolute;

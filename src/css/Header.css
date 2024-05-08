@@ -14,13 +14,12 @@ ul {
 }
 
 /* start */
-body {
-  max-width: 1120px;
-  margin: 0 auto;
-}
+
 .header {
+  max-width: 1120px;
   display: flex;
   align-items: center;
+  margin: 0 auto;
   padding: 20px;
   position: relative;
 }
@@ -30,6 +29,7 @@ body {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  display: inline-block;
 }
 .removeMenu a {
   margin-right: 30px;
@@ -40,6 +40,9 @@ body {
 }
 .uniBotton {
   margin-right: 100px;
+}
+.uniBotton img {
+  display: block;
 }
 .header > a:last-child {
   margin-left: auto;
@@ -53,7 +56,6 @@ body {
 .doingMenuSpread,
 .giveMenuSpread,
 .introduceMenuSpread {
-  display: flex;
   gap: 50px;
   padding: 20px 20px;
   border-top: 1px solid gray;
@@ -61,22 +63,11 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 121px;
+  top: 115px;
   display: none;
   z-index: 999;
 }
-.doingMenuButton:hover + .doingMenuSpread,
-.giveMenuButton:hover + .giveMenuSpread,
-.introduceMenuButton:hover + .introduceMenuSpread {
-  display: flex;
-}
 
-.doingMenuSpread ul,
-.giveMenuSpread ul,
-.introduceMenuSpread ul {
-  font-weight: 600;
-  margin: 20px 0;
-}
 .doingMenuSpread > ul,
 .giveMenuSpread > ul,
 .introduceMenuSpread > ul {
@@ -89,23 +80,43 @@ body {
   font-weight: 400;
   margin-top: 10px;
 }
+ul .boldClass {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0;
+}
 .doingMenuSpread > ul > li:first-child,
 .giveMenuSpread > ul > li:first-child,
 .introduceMenuSpread > ul > li:first-child {
   margin-top: 20px;
-  /* border: 1px solid red; */
+}
+
+.doingMenuButton.active,
+.giveMenuButton.active,
+.introduceMenuButton.active {
+  color: #1cabe2;
+}
+
+li {
+  cursor: pointer;
 }
 
 @media (max-width: 900px) {
   .removeMenu {
     display: none;
   }
-}
+  .header {
+    height: 70px;
+    padding: 0;
+    overflow: hidden;
+  }
 
-@media (max-width: 800px) {
   .uniBotton img {
     width: 140px;
   }
+}
+
+@media (max-width: 800px) {
   .removeMenu {
     display: none;
   }
