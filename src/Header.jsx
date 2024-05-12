@@ -110,9 +110,9 @@ function Header() {
         </div>
 
         <Link
-          to="/info"
+          to="/sponsor"
           className={`giveMenuButton ${
-            location.pathname === "/info" ? "active" : ""
+            location.pathname === "/sponsor" ? "active" : ""
           }`}
           onMouseEnter={handleGiveMenuEnter}
           onClick={() => {
@@ -131,7 +131,7 @@ function Header() {
           onMouseLeave={() => setIsGiveMenuOpen(false)}
         >
           <ul>
-            개인이 후원
+            <li className="boldClass">개인이 후원</li>
             <li>정기후원</li>
             <li>일시후원</li>
             <li>생명을 구하는 선물</li>
@@ -141,31 +141,31 @@ function Header() {
             <li>Party for UNICEF</li>
           </ul>
           <ul>
-            단체에서 후원
+            <li className="boldClass">단체에서 후원</li>
             <li>기업·기관 사회공헌</li>
             <li>학교후원</li>
             <li>병원후원</li>
             <li>후원회</li>
           </ul>
           <ul>
-            후원자 참여
+            <li className="boldClass">후원자 참여 </li>
             <li>현장 방문</li>
             <li>행사·이벤트</li>
             <li>참여활동</li>
             <li>후원자 이야기</li>
           </ul>
           <ul>
-            어린이 참여
+            <li className="boldClass">어린이 참여</li>
             <li>어린이지구촌체험관</li>
             <li>아동의회</li>
-            <ul>이벤트/캠페인</ul>
+            <li className="boldClass">이벤트/캠페인</li>
           </ul>
         </div>
 
         <Link
-          to="/state"
+          to="/introduce"
           className={`introduceMenuButton ${
-            location.pathname === "/state" ? "active" : ""
+            location.pathname === "/introduce" ? "active" : ""
           }`}
           onMouseEnter={handleIntroduceMenuEnter}
           onClick={() => {
@@ -184,21 +184,21 @@ function Header() {
           onMouseLeave={() => setIsIntroduceMenuOpen(false)}
         >
           <ul>
-            유니세프
+            <li className="boldClass">유니세프</li>
             <li>소개</li>
             <li>걸어온 길</li>
             <li>미션과 가치</li>
             <li>조직</li>
           </ul>
           <ul>
-            투명한 유니세프
+            <li className="boldClass">투명한 유니세프</li>
             <li>기금사용처</li>
-            <ul>유니세프와 사람들</ul>
+            <li className="boldClass">유니세프와 사람들</li>
           </ul>
           <ul>
-            공지사항
-            <ul>보도자료</ul>
-            <ul>채용</ul>
+            <li className="boldClass">공지사항</li>
+            <li className="boldClass">보도자료</li>
+            <li className="boldClass">채용</li>
           </ul>
         </div>
       </div>

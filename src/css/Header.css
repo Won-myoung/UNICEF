@@ -1,3 +1,5 @@
+@import url("./colorVaration.css");
+
 /* reset */
 * {
   margin: 0;
@@ -36,7 +38,7 @@ ul {
 }
 
 .header a:hover {
-  color: #1cabe2;
+  color: var(--color-mainBlue);
 }
 .uniBotton {
   margin-right: 100px;
@@ -72,6 +74,11 @@ ul {
 .giveMenuSpread > ul,
 .introduceMenuSpread > ul {
   margin: 0;
+  .boldClass {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0;
+  }
 }
 .doingMenuSpread li,
 .giveMenuSpread li,
@@ -80,11 +87,13 @@ ul {
   font-weight: 400;
   margin-top: 10px;
 }
-ul .boldClass {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 20px 0;
+
+.doingMenuSpread li:hover,
+.giveMenuSpread li:hover,
+.introduceMenuSpread li:hover {
+  color: var(--color-mainBlue);
 }
+
 .doingMenuSpread > ul > li:first-child,
 .giveMenuSpread > ul > li:first-child,
 .introduceMenuSpread > ul > li:first-child {
@@ -102,24 +111,29 @@ li {
 }
 
 @media (max-width: 900px) {
-  .removeMenu {
+  /* .removeMenu {
     display: none;
-  }
+  } */
   .header {
     height: 70px;
     padding: 0;
     overflow: hidden;
   }
-
+  .uniBotton {
+    margin-right: 30px;
+  }
+  .removeMenu a {
+    margin-right: 14px;
+  }
   .uniBotton img {
     width: 140px;
   }
 }
 
 @media (max-width: 800px) {
-  .removeMenu {
+  /* .removeMenu {
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 640px) {

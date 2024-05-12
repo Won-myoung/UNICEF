@@ -24,6 +24,7 @@ body,
 Header {
   border: 2px solid red;
 }
+
 @media (max-width: 450px) {
   #App {
     border-radius: 0;

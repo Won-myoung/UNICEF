@@ -1,6 +1,6 @@
 // Props: 상위 컴포넌트에서 하위 컴포넌트로 피라미터를 전달하는 것.
 // Home -> Prop name, age
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./css/doing.css";
 import BgBar from "./pages/BgBar";
 import DoingSub01 from "./pages/DoingSub01";
@@ -8,22 +8,54 @@ import DoingSub02 from "./pages/DoingSub02";
 import DoingSub03 from "./pages/DoingSub03";
 
 function Doing() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const [currentTab, setCurrentTab] = useState("DoingSub01"); // 초기 상태는 'DoingSub01'
 
   const handleButtonClick = (tab) => {
     setCurrentTab(tab); // 버튼을 누를 때마다 currentTab 상태 업데이트
   };
 
+  // 폰트크기 width에 맞게 변환 min28/max48
+  const calculateFontSize = () => {
+    const minFontSize = 28; // 최소 폰트 크기
+    const maxFontSize = 48; // 최대 폰트 크기
+
+    // 1120에서 640 사이의 화면 너비 범위에서만 폰트 크기를 조정합니다.
+    const fontSize =
+      minFontSize +
+      ((maxFontSize - minFontSize) *
+        (Math.min(1120, Math.max(windowWidth, 640)) - 640)) /
+        (1120 - 640);
+
+    // 폰트 크기를 반환합니다.
+    return `${fontSize}px`;
+  };
+
   return (
     <div className="doing">
       <BgBar />
-      <div className="topBar">
-        <h2>활동 지역</h2>
+      <div className="doingTopBar">
+        <h2 style={{ fontSize: calculateFontSize() }}>활동 지역</h2>
         <p>for every child, everywhere</p>
       </div>
-      <div className="bodyWrap">
-        <div className="body01">
-          <h2>모든 어린이가 행복한 나라</h2>
+      <div className="doingBodyWrap">
+        <div className="doingBody01">
+          <h2 style={{ fontSize: calculateFontSize() }}>
+            모든 어린이가 행복한 나라
+          </h2>
           <p>
             유니세프는 <span>190여 개 나라와 영토</span>에서 모든 어린이들, 특히
             가장 소외된 어린이의 권리와 복지를 증진하기 위해 일합니다. 전 세계
@@ -31,7 +63,7 @@ function Doing() {
             현장에 접근합니다. 재난 전에도, 재난 중에도, 재난 후에도 한결같이
             어린이 곁을 지킵니다.
           </p>
-          <div className="features">
+          <div className="doingFeatures">
             <div>
               <img src="/earth.png" alt="" />
               <div>
@@ -76,7 +108,7 @@ function Doing() {
             </div>
           </div>
         </div>
-        <div className="body02">
+        <div className="doingBody02">
           <button
             onClick={() => handleButtonClick("DoingSub01")}
             className={currentTab === "DoingSub01" ? "active" : ""}

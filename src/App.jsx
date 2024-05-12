@@ -1,8 +1,8 @@
 import "./App.css";
 import Header from "./Header";
 import Doing from "./Doing";
-import Info from "./pages/Info";
-import State from "./pages/State";
+import Sponsor from "./Sponsor";
+import Introduce from "./pages/Introduce";
 import Footer from "./Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -13,8 +13,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Doing />} />
-          <Route path="/info" element={<Info />} />
-          <Route path="/state" element={<State />} />
+          <Route path="/sponsor" element={<Sponsor />} />
+          <Route path="/introduce" element={<Introduce />} />
         </Routes>
       </BrowserRouter>
       <Footer />
