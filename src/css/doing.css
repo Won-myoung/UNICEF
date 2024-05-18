@@ -109,14 +109,14 @@ p {
   color: var(--color-white);
 }
 
-@media (max-width: 900px) {
-  .doingBody01 .features img {
+@media (max-width: 990px) {
+  .doingBody01 .doingFeatures img {
     width: 80px;
   }
-  .doingBody01 .features p {
+  .doingBody01 .doingFeatures p {
     font-size: 14px;
   }
-  .doingBody01 .features strong {
+  .doingBody01 .doingFeatures strong {
     font-size: 16px;
   }
   .doingBody02 button {

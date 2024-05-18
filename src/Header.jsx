@@ -1,8 +1,19 @@
 import { Link, useLocation } from "react-router-dom";
 import "./css/Header.css";
 import { useEffect, useState } from "react";
+import HideMenu from "./HideMenu";
+import Introduce from "./Introduce";
+import TestMenu from "./MainPage"; // TestMenu 컴포넌트 import
 
 function Header() {
+  // HideMenu 모달의 열림/닫힘 상태 관리
+  const [isHideMenuOpen, setIsHideMenuOpen] = useState(false);
+
+  const toggleHideMenu = () => {
+    setIsHideMenuOpen(!isHideMenuOpen);
+  };
+  //HideMenu end
+
   const [isDoingMenuOpen, setIsDoingMenuOpen] = useState(false);
   const [isGiveMenuOpen, setIsGiveMenuOpen] = useState(false);
   const [isIntroduceMenuOpen, setIsIntroduceMenuOpen] = useState(false);
@@ -27,7 +38,7 @@ function Header() {
   /* 마우스가 브라우저 벗어나면 끄기 */
   useEffect(() => {
     const handleMouseLeaveDocument = () => {
-      setIsDoingMenuOpen(false);
+      // setIsDoingMenuOpen(false);
       setIsGiveMenuOpen(false);
       setIsIntroduceMenuOpen(false);
     };
@@ -41,7 +52,7 @@ function Header() {
 
   return (
     <div className="header">
-      <Link className="uniBotton">
+      <Link to="/" className="uniBotton">
         <img
           src="https://www.unicef.or.kr/static/logo_active_30th@2x-bf93e28bab61b440b4527f6bde4e407e.png"
           alt=""
@@ -49,7 +60,7 @@ function Header() {
       </Link>
       <div className="removeMenu">
         <Link
-          to="/"
+          to="/doing"
           className={`doingMenuButton ${
             location.pathname === "/" ? "active" : ""
           }`}
@@ -71,7 +82,9 @@ function Header() {
         >
           <ul>
             <li className="boldClass">전세계 모든 어린이를 위해</li>
-            <li>활동지역</li>
+            <li>
+              <Link to="/TestMenu">활동지역</Link>
+            </li>
             <li>스쿨스 포 아시아</li>
             <li>#OnMyMind</li>
             <li className="boldClass">소식</li>
@@ -185,7 +198,9 @@ function Header() {
         >
           <ul>
             <li className="boldClass">유니세프</li>
-            <li>소개</li>
+            <li>
+              <Link>소개</Link>
+            </li>
             <li>걸어온 길</li>
             <li>미션과 가치</li>
             <li>조직</li>
@@ -203,7 +218,14 @@ function Header() {
         </div>
       </div>
 
-      <Link>후원하기</Link>
+      <Link className="sponsoring">후원하기</Link>
+      <button onClick={toggleHideMenu} className="burgerIcon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </button>
+      {/* HideMenu 모달 */}
+      {isHideMenuOpen && <HideMenu onClose={toggleHideMenu} />}
     </div>
   );
 }

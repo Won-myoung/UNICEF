@@ -23,7 +23,7 @@ ul {
   align-items: center;
   margin: 0 auto;
   padding: 20px;
-  position: relative;
+  /* position: fixed; */
 }
 
 .header a {
@@ -46,7 +46,7 @@ ul {
 .uniBotton img {
   display: block;
 }
-.header > a:last-child {
+.sponsoring {
   margin-left: auto;
   background-color: rgb(255, 220, 14);
   width: 182px;
@@ -54,10 +54,38 @@ ul {
   text-align: center;
   line-height: 70px;
 }
+.burgerIcon {
+  width: 30px;
+  /* 아이콘의 너비 */
+  height: 20px; /* 아이콘의 높이 */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between; /* 세로 방향으로 아이콘을 공간을 균등하게 배치 */
+  cursor: pointer; /* 클릭 가능한 아이콘으로 설정 */
+  height: 75px;
+  width: 75px;
+  padding: 28px;
+  border: none;
+  background-color: var(--color-mainBlue);
+  transition: all 0.3s;
+  display: none;
+}
+.burgerIcon:hover {
+  background-color: #374ea2;
+}
 
+.burgerIcon .line {
+  border-radius: 10px;
+  width: 25px; /* 선의 너비 */
+  height: 3px; /* 선의 높이 */
+  background-color: var(--color-white); /* 선의 색상 */
+}
 .doingMenuSpread,
 .giveMenuSpread,
 .introduceMenuSpread {
+  max-width: 1120px;
+  margin: 0 auto;
   gap: 50px;
   padding: 20px 20px;
   border-top: 1px solid gray;
@@ -110,10 +138,10 @@ li {
   cursor: pointer;
 }
 
-@media (max-width: 900px) {
-  /* .removeMenu {
+@media (max-width: 990px) {
+  .removeMenu {
     display: none;
-  } */
+  }
   .header {
     height: 70px;
     padding: 0;
@@ -122,11 +150,14 @@ li {
   .uniBotton {
     margin-right: 30px;
   }
-  .removeMenu a {
+  /*   .removeMenu a {
     margin-right: 14px;
-  }
+  } */
   .uniBotton img {
     width: 140px;
+  }
+  .burgerIcon {
+    display: flex;
   }
 }
 

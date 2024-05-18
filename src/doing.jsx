@@ -33,14 +33,12 @@ function Doing() {
     const minFontSize = 28; // 최소 폰트 크기
     const maxFontSize = 48; // 최대 폰트 크기
 
-    // 1120에서 640 사이의 화면 너비 범위에서만 폰트 크기를 조정합니다.
     const fontSize =
       minFontSize +
       ((maxFontSize - minFontSize) *
         (Math.min(1120, Math.max(windowWidth, 640)) - 640)) /
         (1120 - 640);
 
-    // 폰트 크기를 반환합니다.
     return `${fontSize}px`;
   };
 

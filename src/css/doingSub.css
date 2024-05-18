@@ -136,8 +136,8 @@
     font-size: 16px;
   }
 }
-li img {
-  width: 53px;
+.committee li img {
+  height: 32px;
   padding-right: 40px;
 }
 
