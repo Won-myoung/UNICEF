@@ -30,7 +30,7 @@ function Doing() {
 
   // 폰트크기 width에 맞게 변환 min28/max48
   const calculateFontSize = () => {
-    const minFontSize = 28; // 최소 폰트 크기 크기크기
+    const minFontSize = 28; // 최소 폰트 크기 크기수정크기수정
     const maxFontSize = 48; // 최대 폰트 크기
 
     const fontSize =
