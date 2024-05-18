@@ -8,12 +8,12 @@
 }
 
 .mainCover02 {
-  /* display: none; */
+  display: none;
   width: 100vw;
+  border: 20x solid red;
   .mainCoverItem {
     width: 100%;
     > img {
-      border: 20x solid red;
       object-fit: cover;
     }
   }
